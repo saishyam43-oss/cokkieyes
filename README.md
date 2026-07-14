@@ -45,8 +45,14 @@ This analysis translates 5 months of historical event telemetry, subscription bi
 
 ## 🧠 Structured Analysis
 
+**🔗 [View the Interactive Looker Studio Dashboard Here](https://datastudio.google.com/reporting/9ffa87e1-5538-4fb4-b9ca-32ff89cd7e39/page/mop3F)**
+
+![CookieYes Looker Studio Dashboard](images/05_full_dashboard.png)
+
 ### 1. The User Journey & Activation Bottleneck
 *Where do users get stuck, and does the platform matter?*
+
+![Activation Funnel](images/01_activation_funnel.png)
 
 While CookieYes maintains a healthy overall activation rate (~68.5% of signups eventually get a live banner), the journey is not frictionless. I built a cohort-based funnel to identify the exact moments of drop-off.
 
@@ -65,6 +71,8 @@ CookieYes boasts a world-class Trial-to-Paid conversion rate of **33.81%**. Howe
 ### 3. The "Leaky Bucket" Retention Threat
 *How does product behavior impact Monthly Recurring Revenue (MRR)?*
 
+![MRR Trend](images/02_mrr_trend.png)
+
 While the "Scan-to-Buy" behavior drives excellent short-term conversion, it creates severe long-term financial instability. 
 
 * **The Churn Reality:** I identified **716 users** who paid for a subscription but never successfully installed the banner. Because they use CookieYes as a one-time "audit tool" rather than an ongoing consent platform, they churn immediately.
@@ -73,10 +81,15 @@ While the "Scan-to-Buy" behavior drives excellent short-term conversion, it crea
 ### 4. Acquisition Quality & Marketing Efficiency
 *Which segments and campaigns are actually profitable?*
 
+![Retention by Source](images/04_retention_heatmap.png)
+
 Not all volume is good volume. I joined ad performance data, acquisition sources, and invoice revenue to find the true Return on Ad Spend (ROAS).
 
 * **Highest Quality (Referrals):** Referral traffic yields the highest Lifetime Value (LTV of 1.06 billing cycles) and relatively low churn.
 * **Lowest Quality (Google):** Google Ads drive massive volume but the lowest quality users, suffering from the highest overall churn rate (**22.11%**). 
+
+![Marketing ROAS](images/03_marketing_roas.png)
+
 * **The Golden Goose (Campaign F):** Campaign F is highly efficient, boasting a low Customer Acquisition Cost (CAC) of $49.94 and yielding **$3.24 for every $1 spent** (323.76% ROAS).
 * **The Money Pit (Campaign C):** Campaign C has the highest overall spend but the lowest efficiency, yielding only **$2.21 per $1 spent** with a CAC of $66.94.
 
@@ -109,7 +122,8 @@ Every campaign is profitable, but the efficiency variance is massive.
 ## 🛠️ Technical Methodology & Stack
 
 **The Tech Stack:**
-* **Data Processing & EDA:** Python (Pandas, NumPy) in Google Colab.
+* **Data Processing & EDA:** Python (Pandas, NumPy) in [Google Colab](notebooks/cookieyes_analysis.ipynb).
+* **Data Sources:** [View Raw & Processed Datasets](data/)
 * **Visualization:** Looker Studio (Interactive Dashboarding), Matplotlib & Seaborn (Notebook visuals).
 * **Techniques:** Cohort Analysis, Funnel Aggregation, Deterministic Imputation, ROAS Modeling.
 
