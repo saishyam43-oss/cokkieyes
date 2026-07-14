@@ -43,7 +43,8 @@ This analysis translates 5 months of historical event telemetry, subscription bi
 
 ---
 
-## 🧠 Structured Analysis
+##  🧠 Core Business Insights & Analysis
+*By merging product telemetry, subscription billing, and marketing ad spend, this analysis deconstructs the entire CookieYes user lifecycle. The following breakdown pinpoints exactly where activation fails, why MRR is shrinking, and which marketing channels actually drive profitable growth.*
 
 **🔗 [View the Interactive Looker Studio Dashboard Here](https://datastudio.google.com/reporting/9ffa87e1-5538-4fb4-b9ca-32ff89cd7e39/page/mop3F)**
 
@@ -151,12 +152,28 @@ To ensure data integrity and align with SaaS business standards, the following a
 
 ---
 
+## 🤖 AI Acknowledgement & Modern Workflow
+
+In the spirit of transparency and modern engineering practices, Large Language Models (LLMs) were utilized during this project as an accelerator and analytical sparring partner. 
+
+To ensure the integrity of the analysis, a strict "Human-in-the-Loop" protocol was followed:
+
+* **Code Acceleration (Pair Programming):** AI was leveraged to generate boilerplate visualization syntax (e.g., `matplotlib` and `seaborn` styling properties) and format the Pandas `.style` heatmap, allowing me to focus time on the actual data transformations.
+* **Hypothesis Validation:** AI was used to pressure-test my initial hypotheses (such as the "Scan-to-Buy" paradox) and simulate stakeholder Q&A, ensuring the final recommendations were logically sound and business-focused.
+* **Human Ownership:** The core project architecture, data cleaning decisions (e.g., the deterministic imputation of missing billing dates), funnel logic, and final strategic recommendations were exclusively human-driven. Every line of code was executed, audited, and verified by me prior to publication.
+
+---
+
 ## ⚠️ Limitations
 
 * **Time Horizon:** The dataset covers a 5-month acquisition window. While sufficient for short-term churn analysis, a 12-month window would be required to accurately model true Lifetime Value (LTV) and annual renewal behavior.
 * **Feature Depth:** The event logs cover macro-milestones (e.g., `banner_activated`). Further analysis would require micro-interaction telemetry (e.g., which specific banner layouts correlate with higher consent rates).
 
+---
+
 ## 🔮 Future Roadmap
 
 1. **Predictive Churn Modeling:** Train a classification model (e.g., Random Forest or XGBoost) on the first 14 days of product telemetry to identify accounts with a high probability of churning before their first renewal.
 2. **LTV-Weighted Marketing:** Transition the ROAS calculation from utilizing short-term Net Revenue to utilizing Predicted LTV, optimizing ad spend for retention rather than immediate conversion.
+
+---
